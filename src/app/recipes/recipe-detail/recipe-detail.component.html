@@ -19,13 +19,13 @@
       </button>
       <ul class="dropdown-menu">
         <li>
-          <a href="#" (click)="addIngredientsToShoppingList()">Add ingredients to Shopping List</a>
+          <a (click)="addIngredientsToShoppingList()">Add ingredients to Shopping List</a>
         </li>
         <li>
-          <a href="#">Edit Recipe</a>
+          <a [routerLink]="['/recipes', id, 'edit']">Edit Recipe</a>
         </li>
         <li>
-          <a href="#">Delete Recipe</a>
+          <a >Delete Recipe</a>
         </li>
       </ul>
     </div>
