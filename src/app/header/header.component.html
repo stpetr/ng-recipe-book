@@ -12,8 +12,8 @@
         <li class="dropdown manage-dropdown" appDropdown>
           <a class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a>Save Data</a></li>
-            <li><a>Fetch Data</a></li>
+            <li><a (click)="handleSaveData()">Save Data</a></li>
+            <li (click)="handleFetchData()"><a>Fetch Data</a></li>
           </ul>
         </li>
       </ul>

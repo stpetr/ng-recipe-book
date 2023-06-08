@@ -9,41 +9,47 @@ import {Subject} from "rxjs";
   providedIn: 'root',
 })
 export class RecipeService {
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Test recipe A',
-      'This is the A recipe',
-      'https://tinyurl.com/2p2sc9z7',
-      [
-        new Ingredient('Potatoes', 1),
-        new Ingredient('Eggs', 2),
-      ],
-    ),
-    new Recipe(
-      'Test recipe B',
-      'This is the B recipe',
-      'https://tinyurl.com/2p2sc9z7',
-      [
-        new Ingredient('Tomatoes', 2),
-        new Ingredient('Cucumbers', 1),
-        new Ingredient('Oil', 1),
-        new Ingredient('Salt', 1),
-      ]
-    ),
-    new Recipe(
-      'Test recipe C',
-      'This is the C recipe',
-      'https://tinyurl.com/2p2sc9z7',
-      [
-        new Ingredient('Bread', 1),
-        new Ingredient('Butter', 1),
-      ]
-    ),
-  ];
+  private recipes: Recipe[] = [];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Test recipe A',
+  //     'This is the A recipe',
+  //     'https://tinyurl.com/2p2sc9z7',
+  //     [
+  //       new Ingredient('Potatoes', 1),
+  //       new Ingredient('Eggs', 2),
+  //     ],
+  //   ),
+  //   new Recipe(
+  //     'Test recipe B',
+  //     'This is the B recipe',
+  //     'https://tinyurl.com/2p2sc9z7',
+  //     [
+  //       new Ingredient('Tomatoes', 2),
+  //       new Ingredient('Cucumbers', 1),
+  //       new Ingredient('Oil', 1),
+  //       new Ingredient('Salt', 1),
+  //     ]
+  //   ),
+  //   new Recipe(
+  //     'Test recipe C',
+  //     'This is the C recipe',
+  //     'https://tinyurl.com/2p2sc9z7',
+  //     [
+  //       new Ingredient('Bread', 1),
+  //       new Ingredient('Butter', 1),
+  //     ]
+  //   ),
+  // ];
 
   recipesChanged = new Subject<Recipe[]>();
 
   constructor(private shoppingListService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next([...this.recipes]);
+  }
 
   getRecipes() {
     return [...this.recipes];
