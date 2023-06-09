@@ -10,11 +10,13 @@ import {API_URL} from "./config";
   providedIn: 'root',
 })
 export class DataStorageService {
-  constructor(private httpClient: HttpClient, private recipeService: RecipeService) {}
+  constructor(
+    private httpClient: HttpClient,
+    private recipeService: RecipeService,
+    ) {}
 
   fetchRecipes() {
-    return this.httpClient
-      .get<Recipe[]>(`${API_URL}/recipes.json`)
+    return this.httpClient.get<Recipe[]>(`${API_URL}/recipes.json`)
       .pipe(
         map((recipes) => {
           return recipes.map((recipe) => {
