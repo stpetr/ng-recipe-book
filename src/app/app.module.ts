@@ -8,18 +8,15 @@ import {AppComponent} from './app.component';
 import {AuthComponent} from './auth/auth.component';
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import {HeaderComponent} from "./header/header.component";
-import {DropdownDirective} from './shared/directives/dropdown.directive';
-import {LoadingSpinnerComponent} from "./shared/components/loading-spinner/loading-spinner.component";
 import {RecipesModule} from "./recipes/recipes.module";
 import {ShoppingListModule} from "./shopping-list/shopping-list.module";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective,
     AuthComponent,
-    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +24,7 @@ import {ShoppingListModule} from "./shopping-list/shopping-list.module";
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     RecipesModule,
     ShoppingListModule,
   ],
