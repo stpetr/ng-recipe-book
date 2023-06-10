@@ -7,7 +7,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from './app.component';
 import {AuthInterceptorService} from "./auth/auth-interceptor.service";
 import {HeaderComponent} from "./header/header.component";
-import {ShoppingListModule} from "./shopping-list/shopping-list.module";
 import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
@@ -22,7 +21,6 @@ import {SharedModule} from "./shared/shared.module";
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    ShoppingListModule,
   ],
   providers: [
     {
