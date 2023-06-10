@@ -6,7 +6,7 @@ import {AuthComponent} from "./auth.component";
 import {FormsModule} from "@angular/forms";
 
 const authRoutes: Routes = [
-  { path: 'auth', component: AuthComponent },
+  { path: '', component: AuthComponent },
 ];
 
 @NgModule({
